@@ -1,3 +1,4 @@
+import Input from "./components/Input";
 import useFormulario from "./hooks/useFormulario";
 import styled from "@emotion/styled";
 
@@ -10,25 +11,33 @@ const App = () => {
 
   return (
     <form>
-      <input
-        type="text"
-        placeholder="Nombre"
-        name="nombre"
+      <Input
+        label='Nombre'
+        type='text'
+        placeholder='Nombre'
+        name='nombre'
         value={formulario.nombre}
-        onChange={handleChange} />
+        onChange={handleChange}
+      />
 
-      <input
+      <Input
+        label='Apellido'
         type="text"
         placeholder="Apellido"
         name="apellido"
         value={formulario.apellido}
-        onChange={handleChange} />
-      <input
+        onChange={handleChange}
+      />
+
+      <Input
+        label='Email'
         type="email"
         placeholder="Email"
         name="email"
         value={formulario.email}
-        onChange={handleChange} />
+        onChange={handleChange}
+      />
+
     </form>
   )
 }
