@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
+import useFormulario from "./hooks/useFormulario";
 
 import Card from "./components/Card";
 import Input from "./components/Input";
-import useFormulario from "./hooks/useFormulario";
+import Button from "./components/Button";
 
 
 const Contenedor = styled.div`
@@ -23,7 +24,7 @@ const App = () => {
           <Input
             label='Nombre'
             type='text'
-            placeholder='Nombre'
+            placeholder='Nombre...'
             name='nombre'
             value={formulario.nombre}
             onChange={handleChange}
@@ -31,7 +32,7 @@ const App = () => {
           <Input
             label='Apellido'
             type="text"
-            placeholder="Apellido"
+            placeholder="Apellido..."
             name="apellido"
             value={formulario.apellido}
             onChange={handleChange}
@@ -39,11 +40,13 @@ const App = () => {
           <Input
             label='Email'
             type="email"
-            placeholder="Email"
+            placeholder="Email..."
             name="email"
             value={formulario.email}
             onChange={handleChange}
           />
+
+          <Button>enviar</Button>
         </form>
       </Card>
     </Contenedor>

@@ -9,6 +9,7 @@ const Fild = styled.div`
     color: #222;
     font-weight: 700;
     font-size:  20px;
+    text-transform: uppercase;
   }
 
   input{
@@ -20,8 +21,7 @@ const Fild = styled.div`
     font-size: 20px;
     padding: 10px 15px;
     color: #222;
-    width: 100%;
-    
+    width: 100%;    
   }
 `
 
