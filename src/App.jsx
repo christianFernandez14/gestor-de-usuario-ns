@@ -6,6 +6,7 @@ import Card from "./components/Card";
 import Error from "./components/Error";
 import Input from "./components/Input";
 import Button from "./components/Button";
+import Usuario from "./components/Usuario";
 
 
 const Contenedor = styled.div`
@@ -35,7 +36,6 @@ const App = () => {
     ])
 
     reset()
-
   }
 
   return (
@@ -71,6 +71,20 @@ const App = () => {
           <Button>enviar</Button>
         </form>
       </Card>
+
+      {usuarios.length > 0 && (
+        <Card>
+          {usuarios.map(x => (
+            <Usuario
+              key={x.email}
+              x={x}
+            />
+          ))}
+
+        </Card>
+
+      )}
+
     </Contenedor>
   )
 }
