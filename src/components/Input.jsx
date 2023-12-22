@@ -12,6 +12,7 @@ const Fild = styled.div`
   }
 
   input{
+    box-sizing: border-box;
     background-color: #fff;
     outline: none;
     border: 1px solid rgb(34,34,34, .15);
