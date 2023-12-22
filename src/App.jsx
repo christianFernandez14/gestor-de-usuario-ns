@@ -1,7 +1,9 @@
+import { useState } from "react";
 import styled from "@emotion/styled";
 import useFormulario from "./hooks/useFormulario";
 
 import Card from "./components/Card";
+import Error from "./components/Error";
 import Input from "./components/Input";
 import Button from "./components/Button";
 
@@ -11,16 +13,36 @@ const Contenedor = styled.div`
   margin: 0 auto;
 `
 const App = () => {
-  const [formulario, handleChange] = useFormulario({
+  const [usuarios, setUsuarios] = useState([])
+  const [mensaje, setMensaje] = useState(false)
+  const [formulario, handleChange, reset] = useFormulario({
     nombre: '',
     apellido: '',
     email: ''
   })
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (Object.values(formulario).includes('')) {
+      setMensaje(true)
+
+      return;
+    }
+    setMensaje(false)
+    setUsuarios([
+      ...usuarios,
+      formulario
+    ])
+
+    reset()
+
+  }
+
   return (
     <Contenedor>
       <Card>
-        <form>
+        <form onSubmit={handleSubmit}>
+          {mensaje && <Error text='No puede haber campos vacios' />}
           <Input
             label='Nombre'
             type='text'
